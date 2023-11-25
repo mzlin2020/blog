@@ -15,5 +15,9 @@ const config: Config = {
     },
   },
   plugins: [],
+  // 避免与antd的样式冲突
+  corePlugins: {
+    preflight: false,
+  },
 };
 export default config;
