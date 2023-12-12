@@ -1,0 +1,4 @@
+/* 去除drawer黑色边框 */
+.ant-drawer:focus {
+  outline: none;
+}

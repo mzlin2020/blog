@@ -1,0 +1,16 @@
+{
+  "id": "4369283",
+  "name": "mine",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1433638",
+      "name": "bars",
+      "font_class": "bars1",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    }
+  ]
+}

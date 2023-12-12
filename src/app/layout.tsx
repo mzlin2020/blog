@@ -1,3 +1,4 @@
+import "@/assets/font/iconfont.css";
 import StyledComponentsRegistry from "@/lib/AntdRegistry";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -14,7 +15,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={inter.className}>
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        <StyledComponentsRegistry>
+          <div className="h-full w-full">{children}</div>
+        </StyledComponentsRegistry>
       </body>
     </html>
   );
