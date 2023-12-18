@@ -2,6 +2,7 @@
 import Sider from "@/components/sider/Sider";
 import useConfigStore from "@/store/config";
 import { ConfigProvider, Layout } from "antd";
+import { debounce } from "lodash";
 import React, { useEffect } from "react";
 const { Footer, Content } = Layout;
 
@@ -19,6 +20,7 @@ export default function HomeLayout({ children }: { children: React.ReactNode }) 
       updateScreenWidth(screenWidth);
     };
     handleResize();
+    window.addEventListener("resize", debounce(handleResize, 150));
     return () => {
       window.removeEventListener("resize", handleResize);
     };

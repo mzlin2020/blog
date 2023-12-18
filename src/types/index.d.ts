@@ -1,3 +1,5 @@
+declare module "markdown-navbar";
+
 interface ThemeToken {
   // SeedToken
   colorPrimary: string; //主色调

@@ -11,9 +11,12 @@ const Sider = () => {
     <>
       <div
         onClick={() => setOpen(true)}
-        className="absolute left-5 top-5 flex h-10 w-10 cursor-pointer select-none items-center justify-center rounded-full bg-black text-white opacity-80 outline-0"
+        className="fixed left-5 top-5 flex h-10 w-10 cursor-pointer select-none items-center justify-center rounded-full bg-black text-white opacity-80 outline-0"
       >
         <span className="iconfont">&#xe610;</span>
+      </div>
+      <div className="fixed left-5 top-16 flex h-10 w-10 cursor-pointer select-none items-center justify-center font-semibold">
+        <span className="iconfont text-[20px] opacity-80 hover:opacity-60">&#xe677;</span>
       </div>
       <Drawer
         placement={pageToken.sPlacement}
