@@ -3,6 +3,9 @@ require("events").EventEmitter.defaultMaxListeners = 0; // 解除监听器数量
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: false, //关闭严格模式
+  images: {
+    domains: ["gw.alipayobjects.com"],
+  },
 };
 
 module.exports = nextConfig;

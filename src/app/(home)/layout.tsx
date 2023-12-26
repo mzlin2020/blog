@@ -1,10 +1,9 @@
 "use client";
 import Sider from "@/components/sider/Sider";
 import useConfigStore from "@/store/config";
-import { ConfigProvider, Layout } from "antd";
+import { ConfigProvider } from "antd";
 import { debounce } from "lodash";
 import React, { useEffect } from "react";
-const { Footer, Content } = Layout;
 
 export default function HomeLayout({ children }: { children: React.ReactNode }) {
   const { antdToken, pageToken, updateBreakpoint, updateScreenWidth } = useConfigStore();
@@ -33,13 +32,13 @@ export default function HomeLayout({ children }: { children: React.ReactNode }) 
         token: { ...antdToken },
       }}
     >
-      <Layout>
-        <Layout>
-          <Sider />
-          <Content>{children}</Content>
-        </Layout>
-        <Footer style={{ backgroundColor: pageToken.fbg, height: pageToken.fHeight }}>Footer</Footer>
-      </Layout>
+      <div id="app">
+        <Sider />
+        <main>{children}</main>
+        <footer style={{ backgroundColor: pageToken.fbg, height: pageToken.fHeight }} className="relative z-10">
+          Footer
+        </footer>
+      </div>
     </ConfigProvider>
   );
 }
