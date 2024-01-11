@@ -7,7 +7,7 @@ const NotesLayout = ({ children }: { children: React.ReactNode }) => {
     background: 'url("/images/notes-bg.svg") center center / cover no-repeat',
   };
   const bgFilterStyle: React.CSSProperties = {
-    backdropFilter: "blur(4px)",
+    // backdropFilter: "blur(4px)", //性能损耗过大
   };
   return (
     <>

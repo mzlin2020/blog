@@ -1,6 +1,7 @@
 "use client";
 
 import Markdown from "@/components/markdown/Markdown";
+import { Get } from "@/utlis/request";
 import { FloatButton } from "antd";
 import MarkNav from "markdown-navbar";
 import { useEffect, useState } from "react";
@@ -16,12 +17,27 @@ const NotesDetail = ({ params }: Props) => {
   const [sourceData, setSourceData] = useState("");
   const [openNavbar, setOpenNavbar] = useState(false);
 
-  // 获取数据
+  const getNotesContent = async () => {
+    const { id } = params;
+    const [err, res] = await Get<NotesData[]>(`notes/content/${id}`);
+    if (!err && res && res.data) {
+      let content = res.data[0].content;
+      content = filterHtml(content);
+      setSourceData(content);
+    }
+  };
   useEffect(() => {
-    fetch("/md/Next.js.md")
-      .then((res) => res.text())
-      .then((text) => setSourceData(text));
+    getNotesContent();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // 过滤md文档标识字符
+  const filterHtml = (str: string) => {
+    let start = str.indexOf("```js");
+    let end = str.indexOf("```", start + 3);
+    let newStr = str.slice(0, start) + str.slice(end + 3);
+    return newStr;
+  };
 
   return (
     <>

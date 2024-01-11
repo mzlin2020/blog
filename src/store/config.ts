@@ -21,7 +21,7 @@ const useConfigStore = create<ConfigState>((set) => ({
     sMobileWidth: "240px",
   },
   antdToken: {
-    colorPrimary: "#00b96b",
+    colorPrimary: "#393E46",
   },
   breakpoint: "", //断点
   screenWidth: 0, //尺寸

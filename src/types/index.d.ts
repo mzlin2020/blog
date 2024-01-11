@@ -26,3 +26,25 @@ interface PageToken {
 
 // 断点
 type Breakpoint = "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "";
+
+interface NotesData {
+  id: string;
+  title: string;
+  description: string;
+  content: string;
+  createTime: string;
+  updateTime: string;
+  image: string;
+}
+
+type NotesLists = NotesData[];
+
+// oss信息
+interface OssInfo {
+  accessid: string;
+  dir: string;
+  expire: string;
+  host: string;
+  policy: string;
+  signature: string;
+}
