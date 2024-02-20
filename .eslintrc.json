@@ -3,5 +3,7 @@
   "globals": {
     "React": "readonly"
   },
-  "rules": {}
+  "rules": {
+    "@next/next/no-img-element": "off"
+  }
 }

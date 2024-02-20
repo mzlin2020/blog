@@ -26,10 +26,10 @@ const useConfigStore = create<ConfigState>((set) => ({
   breakpoint: "", //断点
   screenWidth: 0, //尺寸
 
-  updateAntdToken: (newToken) => set({ antdToken: newToken }),
-  updatePageToken: (newToken) => set({ pageToken: newToken }),
-  updateBreakpoint: (newVal) => set({ breakpoint: newVal }),
-  updateScreenWidth: (newVal) => set({ screenWidth: newVal }),
+  updateAntdToken: (antdToken) => set({ antdToken }),
+  updatePageToken: (pageToken) => set({ pageToken }),
+  updateBreakpoint: (breakpoint) => set({ breakpoint }),
+  updateScreenWidth: (screenWidth) => set({ screenWidth }),
 }));
 
 export default useConfigStore;
